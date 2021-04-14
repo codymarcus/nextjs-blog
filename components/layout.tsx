@@ -1,13 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
-const name = 'Cody'
-export const siteTitle = 'Next.js Sample Website'
+export const name = 'Cody Marcus'
+export const siteTitle = 'Cody Marcus'
 
-export default function Layout({ children, home }: { children: React.ReactNode, home?: boolean }) {
+const Layout = ({ children, home }: { children: React.ReactNode, home?: boolean }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -25,49 +24,58 @@ export default function Layout({ children, home }: { children: React.ReactNode, 
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
-        {home ? (
-          <>
-            <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-            <>
+      <div className={styles.heroImageWrapper}>
+        <h1
+          style={{
+            backgroundColor: 'black',
+            color: 'white',
+            display: 'inline',
+            position: 'absolute',
+            zIndex: 1,
+            marginLeft: '50%',
+            transform: 'translateX(-50%)',
+            marginTop: 60,
+            paddingLeft: 15,
+            paddingRight: 15,
+            fontFamily: 'Courier'
+          }}
+        >{name}</h1>
+        <Image
+          priority
+          src="/images/cody.jpeg"
+          objectFit="cover"
+          objectPosition="right"
+          layout="fill"
+          alt={name}
+          quality={100}
+        />
+      </div>
+      <div style={{
+        width: '55vw',
+        backgroundColor: 'black',
+        color: 'white',
+        position: 'absolute',
+        right: 0,
+        display: 'block',
+        top: 0,
+        bottom: 0,
+        overflow: 'hidden'
+      }}>
+        <div style={{ overflow: 'auto', height: '100%', padding: 100 }}>
+          {children}
+          {!home && (
+            <div className={styles.backToHome}>
               <Link href="/">
-                <a>
-                  <Image
-                    priority
-                    src="/images/profile.jpg"
-                    className={utilStyles.borderCircle}
-                    height={108}
-                    width={108}
-                    alt={name}
-                  />
-                </a>
+                <a>← Back</a>
               </Link>
-              <h2 className={utilStyles.headingLg}>
-                <Link href="/">
-                  <a className={utilStyles.colorInherit}>{name}</a>
-                </Link>
-              </h2>
-            </>
+            </div>
           )}
-      </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
         </div>
-      )}
+
+      </div>
+
     </div>
   )
 }
+
+export default Layout
