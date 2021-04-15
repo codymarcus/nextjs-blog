@@ -1,7 +1,34 @@
 .container {
-  max-width: 36rem;
   padding: 0;
   margin: 0;
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.heroText {
+  background-color: black;
+  color: white;
+  display: inline;
+  position: absolute;
+  z-index: 1;
+  margin-top: 60px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: Courier;
+}
+
+.postsContainer {
+  width: 55vw;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+}
+
+.postsScrollable {
+  overflow: auto;
+  height: 100%;
+  padding: 100px;
 }
 
 .backToHome {
@@ -9,10 +36,35 @@
 }
 
 .heroImageWrapper {
-  position: fixed;
-  height: 100vh;
+  position: relative;
   width: 45vw;
   overflow: hidden;
-  z-index: -1;
-  top: 0;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .postsContainer {
+    min-height: 50vh;
+    overflow: visible;
+    width: 100%;
+  }
+  .heroImageWrapper {
+    height: 50vh;
+    width: 100%;
+  }
+  .container {
+    flex-direction: column;
+    height: unset;
+    overflow: auto;
+  }
+  .heroText {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .postsScrollable {
+    padding: 50px 35px;
+  }
 }

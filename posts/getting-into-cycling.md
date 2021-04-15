@@ -25,7 +25,7 @@ As winter started creeping up I picked up an indoor trainer in order to keep the
 
 ![Specialized Allez](/images/allez.jpeg)
 
-<div style="text-align: center;"><i>Taking a break in Tommy Thompson park</i></div>
+<div style="text-align: center;"><i>Taking a break in Tommy Thompson Park</i></div>
 
 Completing TrainerRoad plans resulted in my FTP rising significantly, and I was starting to look into (outdoor) racing. I would need more experience riding in packs since drafting is one of the most important parts of racing. In early 2020 I began investigating local cycling clubs with group rides in anticipation of spring. Then, as we all know, Covid hit the world and everything shut down. Club riding and racing was out of the question.
 

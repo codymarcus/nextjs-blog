@@ -13,7 +13,7 @@ const Layout = ({ children, home }: { children: React.ReactNode, home?: boolean 
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Cody Marcus's personal site"
         />
         <meta
           property="og:image"
@@ -25,21 +25,7 @@ const Layout = ({ children, home }: { children: React.ReactNode, home?: boolean 
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <div className={styles.heroImageWrapper}>
-        <h1
-          style={{
-            backgroundColor: 'black',
-            color: 'white',
-            display: 'inline',
-            position: 'absolute',
-            zIndex: 1,
-            marginLeft: '50%',
-            transform: 'translateX(-50%)',
-            marginTop: 60,
-            paddingLeft: 15,
-            paddingRight: 15,
-            fontFamily: 'Courier'
-          }}
-        >{name}</h1>
+        <h1 className={styles.heroText}>{name}</h1>
         <Image
           priority
           src="/images/cody.jpeg"
@@ -50,18 +36,8 @@ const Layout = ({ children, home }: { children: React.ReactNode, home?: boolean 
           quality={100}
         />
       </div>
-      <div style={{
-        width: '55vw',
-        backgroundColor: 'black',
-        color: 'white',
-        position: 'absolute',
-        right: 0,
-        display: 'block',
-        top: 0,
-        bottom: 0,
-        overflow: 'hidden'
-      }}>
-        <div style={{ overflow: 'auto', height: '100%', padding: 100 }}>
+      <div className={styles.postsContainer}>
+        <div className={styles.postsScrollable}>
           {children}
           {!home && (
             <div className={styles.backToHome}>
